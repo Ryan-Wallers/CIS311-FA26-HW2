@@ -99,7 +99,7 @@ body {
 .bold { font-weight: 700; }
 
 /* ---------- schedule ---------- */
-.schedule { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin: 1rem 0; }
+.schedule { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin: 1rem 0; border-spacing: 0; }
 .schedule-row { display: grid; grid-template-columns: 9rem 10rem 1fr; }
 .schedule-row + .schedule-row { border-top: 1px solid var(--line); }
 .schedule-head { background: var(--accent-soft); font-weight: 700; font-family: system-ui, sans-serif; }
@@ -157,7 +157,7 @@ body {
 
 /* ---------- form ---------- */
 .form { max-width: 34rem; margin-top: 0.5rem; border: 0; padding: 0; }
-.field { margin-bottom: 1rem; }
+.field { margin-bottom: 1rem; border: none;}
 .field-label {
   display: block;
   font-family: system-ui, sans-serif;
@@ -172,6 +172,13 @@ body {
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--paper);
+}
+.choice-item {
+  display: block;
+}
+.choice-button {
+  width: auto;
+  accent-color: var(--accent);
 }
 .input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 textarea.input { min-height: 5.5rem; resize: vertical; }

@@ -31,7 +31,7 @@
       <form class="searchbar">
         <label for="site-search" class="field-label">Look something up on this site</label>
         <input type="search" id="site-search" name="search" class="input" placeholder="Search">
-        <input type="submit" class="btn btn-small" value="Go"> <!-- I'm not sure if making this a submit and removing the onclick search function would mess this up, but it should be formatted this way I believe -->
+        <input type="submit" class="btn btn-small" value="Go">
       </form>
     </search>
     <nav class="nav">
@@ -62,7 +62,7 @@
           that is what the volunteers in orange vests are there for.
         </p>
 
-        <table class="schedule"> <!-- Slight issue with the CSS caused by the change in element type here, the table header's background doesn't match the rounded border and it no longer fits the full length of its container it seems-->
+        <table class="schedule"> 
           <tr class="schedule-row schedule-head">
             <th class="schedule-cell">Day</th>
             <th class="schedule-cell">Time</th>
@@ -104,7 +104,7 @@
         </ul>
 
         <figure class="figure">
-          <img src="https://placehold.co/640x360" width="640" height="360">
+          <img src="https://placehold.co/640x360" alt="volunteers sorting a delivery" width="640" height="360"> <!-- This was missing alt text, but I couldn't see what the image actually was so I just had to guess here -->
           <figcaption class="figure-caption">
             Volunteers sorting the Saturday delivery, October 2025.
           </figcaption>
@@ -132,12 +132,12 @@
 
           <fieldset class="field">
             <label for="name" class="field-label">Name</label>
-            <input type="text" id="name" name="name" class="input" placeholder="Your name">
+            <input type="text" id="name" name="name" class="input" required placeholder="Your name">
           </fieldset>
 
           <fieldset class="field">
             <label for="email" class="field-label">Email address</label>
-            <input type="email" id="email" name="email" class="input" placeholder="Email address">
+            <input type="email" id="email" name="email" class="input" required placeholder="Email address">
           </fieldset>
 
           <fieldset class="field">
@@ -152,42 +152,54 @@
 
           <fieldset class="field">
             <label for="date" class="field-label">What day would you like your first shift to be?</label>
-            <input type="date" id="date" name="date" class="input" placeholder="MM/DD/YYYY">
+            <input type="date" id="date" name="date" class="input" required placeholder="MM/DD/YYYY">
           </fieldset>
 
           <fieldset class="field">
             <label for="time" class="field-label">What time can you usually arrive?</label>
-            <input type="time" id="time" name="time" class="input" placeholder="e.g. 4:00 PM">
+            <input type="time" id="time" name="time" class="input" required placeholder="e.g. 4:00 PM">
           </fieldset>
 
           <fieldset class="field">
-            <label for="hours" class="field-label">About how many hours can you give each month? Please enter a whole number between 1 and 20.</label>
-            <input type="number" id="hours" name="hours" class="input" min="1" max="20" placeholder="2">
+            <label for="hours" class="field-label">About how many hours (Between 1 and 20) can you give each month?</label>
+            <input type="number" id="hours" name="hours" class="input" required min="1" max="20" value="1">
           </fieldset>
 
           <fieldset class="field">
             <legend class="field-label">Which shift(s) work for you?</legend> <!-- It originally asks to pick one, but then gives either as an option. It makes more sense to me to allow for picking multiple shifts. -->
-            <label for="tuesday">Tuesday evening</label>
-            <input type="checkbox" id="tuesday" name="shift-day" value="tuesday evening" class="input">
-            <label for="saturday">Saturday morning</label>
-            <input type="checkbox" id="saturday" name="shift-day" value="saturday morning" class="input">
+            <div class="choice-item">
+              <input type="checkbox" id="tuesday" name="shift-day" value="tuesday evening" class="input choice-button">
+              <label for="tuesday">Tuesday evening</label>
+            </div>
+            <div class="choice-item">
+              <input type="checkbox" id="saturday" name="shift-day" value="saturday morning" class="input choice-button">
+              <label for="saturday">Saturday morning</label>
+            </div>
           </fieldset>
 
           <fieldset class="field">
-            <legend class="field-label">Which of these can you help with? Check all that apply: heavy lifting, driving a delivery route, speaking Spanish, data entry.</legend>
-            <label for="heavy-lifting">Heavy lifting</label>
-            <input type="checkbox" id="heavy-lifting" name="task" value="heavy lifting" class="input">
-            <label for="delivery">Driving a delivery Route</label>
-            <input type="checkbox" id="delivery" name="task" value="driving delivery" class="input">
-            <label for="spanish">Speaking Spanish</label>
-            <input type="checkbox" id="spanish" name="task" value="speaking Spanish" class="input">
-            <label for="data-entry">Data entry</label>
-            <input type="checkbox" id="data-entry" name="task" value="data entry" class="input">
+            <legend class="field-label">Which of these can you help with? Check all that apply:</legend>
+            <div class="choice-item">
+              <input type="checkbox" id="heavy-lifting" name="task" value="heavy lifting" class="input choice-button">
+              <label for="heavy-lifting">Heavy lifting</label>
+            </div>
+            <div class="choice-item">
+              <input type="checkbox" id="delivery" name="task" value="driving delivery" class="input choice-button">
+              <label for="delivery">Driving a delivery Route</label>
+            </div>
+            <div class="choice-item">
+              <input type="checkbox" id="spanish" name="task" value="speaking Spanish" class="input choice-button">
+              <label for="spanish">Speaking Spanish</label>
+            </div>
+            <div class="choice-item">
+              <input type="checkbox" id="data-entry" name="task" value="data entry" class="input choice-button">
+              <label for="data-entry">Data entry</label>
+            </div>
           </fieldset>
 
           <fieldset class="field">
             <label for="team" class="field-label">Which team would you like to join?</label>
-            <select id="teams" name="team" class="input">
+            <select id="teams" name="team" required class="input">
               <option value="" disabled selected>Select a team</option>
               <optgroup label="Floor teams">
                 <option value="sorting">Sorting</option>
@@ -207,17 +219,21 @@
             <textarea type="text" id="info" name="info" class="input" placeholder="Tell us here"></textarea>
           </fieldset>
 
-          <fieldset class="field">
+          <fieldset class="field"> <!-- I want to style this a bit better but it's getting late -->
             <label for="file" class="field-label">Students: if you need a service-hour form signed, attach it here. We accept PDF or an image.</label>
             <input type="file" id="file" name="service-hour form" accept="image/*, application/pdf">
           </fieldset>
 
           <fieldset class="field">
             <legend class="field-label">Would you like us to text you when a shift needs filling? Yes or no.</legend>
-            <label for="yes">Yes</label>
-            <input type="radio" id="yes" name="text-message" class="input">
-            <label for="no">No</label>
-            <input type="radio" id="no" name="text-message" class="input">
+            <div class="choice-item">
+              <input type="radio" id="yes" name="text-message" class="input choice-button">
+              <label for="yes">Yes</label>
+            </div>
+            <div class="choice-item">
+              <input type="radio" id="no" name="text-message" class="input choice-button">
+              <label for="no">No</label>
+            </div>
           </fieldset>
 
           <input type="submit" class="btn btn-primary" value="Sign Me Up">
