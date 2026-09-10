@@ -89,7 +89,7 @@ body {
   padding-bottom: 0.4rem;
   border-bottom: 1px solid var(--line);
 }
-.h4 {
+.h3 {
   font-size: 1.0625rem;
   font-weight: 700;
   font-family: system-ui, sans-serif;
@@ -173,8 +173,9 @@ body {
   border-radius: 6px;
   background: var(--paper);
 }
-.choice-item {
-  display: block;
+.choice {
+  display: flex;
+  align-items: center;
 }
 .choice-button {
   width: auto;
@@ -183,6 +184,32 @@ body {
 .input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 textarea.input { min-height: 5.5rem; resize: vertical; }
 .radio-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem; }
+
+input[type="file"]{
+  font-family: Georgia, "Times New Roman", serif;
+  border: 1px solid transparent;
+  border-radius: 999px;
+}
+
+/* input[type="file"]:hover{
+  cursor: pointer;
+  background-color: var(--accent-soft);
+} */
+
+::file-selector-button {
+  display: inline-block;
+  cursor: pointer;
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  text-decoration: none;
+  padding: 0.45rem 1rem;
+  font-size: 0.9375rem;
+  background: var(--accent);
+  color: #fff;
+}
+::file-selector-button:hover { background: #632f24; }
 
 .btn {
   display: inline-block;

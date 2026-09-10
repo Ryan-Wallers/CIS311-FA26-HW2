@@ -24,8 +24,8 @@
 
   <header class="topbar">
     <div class="brand">
-      <div class="brand-name">Elm Street Food Pantry</div>
-      <div class="brand-tag">A ministry of Elm Street Church of Christ · Henderson, TN</div> <!-- I'm not sure if I should change this to a p element, since that changes the layout-->
+      <a class="brand-name" href="index.html">Elm Street Food Pantry</a>
+      <p class="brand-tag">A ministry of Elm Street Church of Christ · Henderson, TN</p> <!-- I'm not sure if I should change this to a p element, since that changes the layout-->
     </div>
     <search>
       <form class="searchbar">
@@ -110,7 +110,7 @@
           </figcaption>
         </figure>
 
-        <img src="divider-leaves.png" alt="decorative leaf divider image" class="divider">
+        <img src="divider-leaves.png" alt="" class="divider">
 
         <blockquote class="quote">
           "I came in for a box of groceries and I left with people who knew my name.
@@ -126,7 +126,7 @@
           happens on your first shift. Students: we sign service-hour forms.
         </p>
 
-        <h4 class="h4">Sign Up for a Shift</h4>
+        <h3 class="h3">Sign Up for a Shift</h3>
 
         <form class="form">
 
@@ -167,11 +167,11 @@
 
           <fieldset class="field">
             <legend class="field-label">Which shift(s) work for you?</legend> <!-- It originally asks to pick one, but then gives either as an option. It makes more sense to me to allow for picking multiple shifts. -->
-            <div class="choice-item">
+            <div class="choice">
               <input type="checkbox" id="tuesday" name="shift-day" value="tuesday evening" class="input choice-button">
               <label for="tuesday">Tuesday evening</label>
             </div>
-            <div class="choice-item">
+            <div class="choice">
               <input type="checkbox" id="saturday" name="shift-day" value="saturday morning" class="input choice-button">
               <label for="saturday">Saturday morning</label>
             </div>
@@ -179,19 +179,19 @@
 
           <fieldset class="field">
             <legend class="field-label">Which of these can you help with? Check all that apply:</legend>
-            <div class="choice-item">
+            <div class="choice">
               <input type="checkbox" id="heavy-lifting" name="task" value="heavy lifting" class="input choice-button">
               <label for="heavy-lifting">Heavy lifting</label>
             </div>
-            <div class="choice-item">
+            <div class="choice">
               <input type="checkbox" id="delivery" name="task" value="driving delivery" class="input choice-button">
               <label for="delivery">Driving a delivery Route</label>
             </div>
-            <div class="choice-item">
+            <div class="choice">
               <input type="checkbox" id="spanish" name="task" value="speaking Spanish" class="input choice-button">
               <label for="spanish">Speaking Spanish</label>
             </div>
-            <div class="choice-item">
+            <div class="choice">
               <input type="checkbox" id="data-entry" name="task" value="data entry" class="input choice-button">
               <label for="data-entry">Data entry</label>
             </div>
@@ -225,13 +225,13 @@
           </fieldset>
 
           <fieldset class="field">
-            <legend class="field-label">Would you like us to text you when a shift needs filling? Yes or no.</legend>
-            <div class="choice-item">
-              <input type="radio" id="yes" name="text-message" class="input choice-button">
+            <legend class="field-label">Would you like us to text you when a shift needs filling?</legend>
+            <div class="choice">
+              <input type="radio" id="yes" name="text-message" required class="input choice-button">
               <label for="yes">Yes</label>
             </div>
-            <div class="choice-item">
-              <input type="radio" id="no" name="text-message" class="input choice-button">
+            <div class="choice">
+              <input type="radio" id="no" name="text-message" required class="input choice-button">
               <label for="no">No</label>
             </div>
           </fieldset>
@@ -243,23 +243,23 @@
       <section class="section" id="faq"> <!-- I thought about making this an aside, but it's too closely related to the main topic to be considered tangential -->
         <h2 class="h2">Questions People Ask</h2>
 
-        <h4 class="h4">Do I have to prove I need help?</h4>
+        <h3 class="h3">Do I have to prove I need help?</h3>
         <p class="body-text">
           No. We do not ask for income verification, ID, or a referral. Take what your household needs.
         </p>
 
-        <h4 class="h4">How often can I come?</h4>
+        <h3 class="h3">How often can I come?</h3>
         <p class="body-text">
           Once a week. The monthly diaper distribution is separate and does not count against that.
         </p>
 
-        <h4 class="h4">Can I donate food that is past the "best by" date?</h4>
+        <h3 class="h3">Can I donate food that is past the "best by" date?</h3>
         <p class="body-text">
           Shelf-stable items are usually fine past that date, but we cannot accept anything opened,
           home-canned, or refrigerated. When in doubt, call first.
         </p>
 
-        <h4 class="h4">Is this only for church members?</h4>
+        <h3 class="h3">Is this only for church members?</h3>
         <p class="body-text">
           No. The pantry serves all of Chester County. You will never be asked where you worship.
         </p>
