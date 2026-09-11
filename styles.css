@@ -40,6 +40,8 @@ body {
 }
 .brand-name { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; }
 .brand-tag { font-size: 0.875rem; color: var(--ink-soft); }
+a.brand-name { text-decoration: none; color: var(--ink);}
+a.brand-name:hover { color: var(--accent);}
 
 .nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
 .nav-item {
